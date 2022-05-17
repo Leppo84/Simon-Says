@@ -20,7 +20,7 @@ var sequence = [];
 
 var userSeq = [];
 
-var guessed = sequence;
+var guessed = [];
 
 // creo l'evento sul bottone per iniziare il gioco
 
@@ -87,59 +87,60 @@ function genBtn (where, innerNum) {
 }
 
 function inputNumbers () {
-        btnOne.addEventListener("click", function() {
-            userSeq.push(1);
-            console.log("Tua seq",userSeq);
-        }
-        )
-        btnTwo.addEventListener("click", function() {
-            userSeq.push(2);
-            console.log("Tua seq",userSeq);
-        }
-        )
-        btnThree.addEventListener("click", function() {
-            userSeq.push(3);
-            console.log("Tua seq",userSeq);
-        }
-        )
-        btnFour.addEventListener("click", function() {
-            userSeq.push(4);
-            console.log("Tua seq",userSeq);
-        }
-        )
-        btnFive.addEventListener("click", function() {
-            userSeq.push(5);
-            console.log("Tua seq",userSeq);
-            }
-        )
+    btnOne.addEventListener("click", function() {
+        userSeq.push(1);
+        console.log("Tua seq",userSeq);
     }
+    )
+    btnTwo.addEventListener("click", function() {
+        userSeq.push(2);
+        console.log("Tua seq",userSeq);
+    }
+    )
+    btnThree.addEventListener("click", function() {
+        userSeq.push(3);
+        console.log("Tua seq",userSeq);
+    }
+    )
+    btnFour.addEventListener("click", function() {
+        userSeq.push(4);
+        console.log("Tua seq",userSeq);
+    }
+    )
+    btnFive.addEventListener("click", function() {
+        userSeq.push(5);
+        console.log("Tua seq",userSeq);
+        }
+    )
+}
 
-    function gameCheck() {
-        if (sequence.length > userSeq.length) {
-            myOutput.innerHTML="Tempo scaduto!";
-        }
-        else if (sequence.length < userSeq.length) {
-        myOutput.innerHTML="Mi spiace, hai premuto troppo";    
-        }
-        else {
-            for (let i = 0; i < sequence.length; i++) {
-                let question = sequence[i];
-                console.log ("Simon",question)
-                let answer = userSeq[i]
-                console.log ("Tu",answer)
-                if (answer == question) {
-                }
-                else {
-                    guessed = sequence.splice(i,i);
-                }
+function gameCheck() {
+    if (sequence.length > userSeq.length) {
+        myOutput.innerHTML="Tempo scaduto!";
+    }
+    else if (sequence.length < userSeq.length) {
+    myOutput.innerHTML="Mi spiace, hai premuto troppo";    
+    }
+    else {
+        for (let i = 0; i < sequence.length; i++) {
+            let question = sequence[i];
+            console.log ("Simon",question)
+            let answer = userSeq[i]
+            console.log ("Tu",answer)
+            if (answer == question) {
+                guessed.push(question)
             }
-            if (!guessed.lengh == sequence) {
-                myOutput.innerHTML="Quasi, hai indovinato i numeri",(guessed);
+            else {
             }
+        }
+        if (guessed.length == sequence.length) {
             myOutput.innerHTML="Grande! Hai indovinato tutti i numeri!";
         }
-        console.log("indovinati",guessed)
-        
+        else {
+            myOutput.innerHTML=`Quasi, hai indovinato i numeri ${guessed}`;
+        }
     }
-
-    // element.removeEventListener(event, function, capture)
+    console.log("indovinati",guessed)
+    
+    // startBtn.removeEventListener("click",question);
+}
