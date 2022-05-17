@@ -30,25 +30,25 @@ startBtn.addEventListener("click", function() {
     
     question (5);
 
-    // dopo 3 secondi la faccio sparire
+    // dopo 2 secondi e mezzo la faccio sparire
     
-    setTimeout(erase,3000);
+    setTimeout(erase,2500);
 
-    // dopo altri 5 sec faccio comparire i numeri sui pulsanti
+    // dopo altri 4 sec faccio comparire i numeri sui pulsanti
 
-    setTimeout(genBtn,8000,btnOne,1);
-    setTimeout(genBtn,8000,btnTwo,2);
-    setTimeout(genBtn,8000,btnThree,3);
-    setTimeout(genBtn,8000,btnFour,4);
-    setTimeout(genBtn,8000,btnFive,5);
+    setTimeout(genBtn,6500,btnOne,1);
+    setTimeout(genBtn,6500,btnTwo,2);
+    setTimeout(genBtn,6500,btnThree,3);
+    setTimeout(genBtn,6500,btnFour,4);
+    setTimeout(genBtn,6500,btnFive,5);
 
     // ora permetto all'utente di digitare 
 
-    setTimeout(inputNumbers,8500);
+    setTimeout(inputNumbers,6500);
 
     // dopo altri 3 sec faccio uscire l'output
 
-    setTimeout(gameCheck,12000);
+    setTimeout(gameCheck,10000);
     startBtn.className = "hide";
 })
 
@@ -147,7 +147,7 @@ function gameCheck() {
         }
         
         else if (guessed.length == 4) {
-            myOutput.innerHTML=`Uuuh! Hai azzeccato: ${guessed}!
+            myOutput.innerHTML=`Uuuh! Quattro azzeccati: ${guessed}!
             Quasi!`;
         }
         
