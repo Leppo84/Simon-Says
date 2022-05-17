@@ -2,6 +2,7 @@
     margin: 0;
     border: 0;
     box-sizing: border-box;
+    transition: 0.25s;
 }
 
 body {
@@ -17,44 +18,8 @@ header {
     background-color: bisque;
 }
 
-main {
-
-}
-
-.container {
-    display: flex;
-    width: 70vh;
-    min-height: 60vh;
-    margin: 10vh auto auto;
-    flex-wrap: wrap;
-    align-content: center;
-}
-
-#red_btn {
-    background-color: red;
-    width: 35vh;
-    height: 22vh;
-    padding: 2vh;
-    border-top-left-radius: 100%;
-    border: 4px white groove;
-}
-
-#blue_btn {
-    background-color: blue;
-    width: 35vh;
-    height: 22vh;
-    padding: 2vh;
-    border-top-right-radius: 100%;
-    border: 4px white groove;
-}
-
-#yellow_btn {
-    background-color: rgb(232, 201, 0);
-    width: 70vh;
-    min-height: 16vh;
-    padding: 2vh;
-    border: 4px white groove;
-    transition: 1s;
+#title {
+    font-size: 8vh;
 }
 
 #start_btn {
@@ -64,37 +29,140 @@ main {
     border-radius: 2vh;
     color: white;
     background-color: red;
-    border: 2px solid white;
+    border: 1vh ridge white;
+}
 
+#start_btn:hover {
+    background-color: rgb(255, 52, 52);
+    border-stile: groove;
+}
+
+.container {
+    display: flex;
+    width: 74vh;
+    min-height: 60vh;
+    margin: 5vh auto auto;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+#output {
+    font-size: 6vh;
+}
+
+#red_btn {
+    background-color: rgb(203, 0, 0);
+    width: 36vh;
+    height: 22vh;
+    padding: 2vh;
+    margin: 0.5vh;
+    border-top-left-radius: 100%;
+    border: 1vh white ridge;
+    text-align: right;
+}
+
+#red_btn:hover {
+    background-color: rgb(255, 70, 70);
+    border-style: groove;
+}
+
+#red_btn:active {
+    background-color: rgb(255, 40, 40);
+}
+
+#blue_btn {
+    background-color: rgb(0, 0, 210);
+    width: 36vh;
+    height: 22vh;
+    padding: 2vh;
+    margin: 0.5vh;
+    border-top-right-radius: 100%;
+    border: 1vh white ridge;
+    text-align: left;
 
 }
 
+#blue_btn:hover {
+    background-color: rgb(84, 84, 255);
+    border-style: groove;
+}
+
+#blue_btn:active {
+    background-color: rgb(0, 0, 210);
+}
+
+#yellow_btn {
+    background-color: rgb(218, 189, 0);
+    width: 73vh;
+    min-height: 16vh;
+    margin: 0.5vh;
+    padding: 2vh;
+    border: 1vh white ridge;
+    
+}
+
+#yellow_btn:hover {
+    background-color: rgb(255, 229, 57);
+    border-style: groove;
+}
+
+#yellow_btn:active {
+    background-color: rgb(232, 201, 0);
+}
+
 #green_btn {
-    background-color: green;
-    width: 35vh;
+    background-color: rgb(0, 128, 64);
+    width: 36vh;
     height: 22vh;
     padding: 2vh;
+    margin: 0.5vh;
     border-bottom-left-radius: 100%;
-    border: 4px white groove;
+    border: 1vh white ridge;
+    text-align: right;
+    
+}
+
+#green_btn:hover {
+    background-color: rgb(0, 173, 86);
+    border-style: groove;
+}
+
+#green_btn:active {
+    background-color: rgb(0, 128, 64);
 }
 
 #purple_btn {
     background-color: purple;
-    width: 35vh;
+    width: 36vh;
     height: 22vh;
     padding: 2vh;
+    margin: 0.5vh;
     border-bottom-right-radius: 100%;
-    border: 4px white groove;
+    border: 1vh white ridge;
+    text-align: left;
+}
+
+#purple_btn:hover {
+    background-color: rgb(179, 0, 179);
+    border-style: groove;
+}
+
+#purple_btn:active {
+    background-color: purple;
 }
 
 .btn {
-    margin: 2vh;
+    margin: 3vh;
     font-size: 5vh;
     font-weight: bold;
     padding: 1vh 2vh;
     border-radius: 2vh;
     color: white;
     background-color: transparent;
-    border: 4px solid white;
+    border: 1vh solid white;
     border-radius: 50%;
+}
+
+.hide {
+    display: none;
 }

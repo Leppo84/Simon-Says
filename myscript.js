@@ -49,6 +49,7 @@ startBtn.addEventListener("click", function() {
     // dopo altri 3 sec faccio uscire l'output
 
     setTimeout(gameCheck,12000);
+    startBtn.className = "hide";
 })
 
 // una volta digitato 5 volte li faccio scomparire e genero il nuovo output
@@ -116,10 +117,10 @@ function inputNumbers () {
 
 function gameCheck() {
     if (sequence.length > userSeq.length) {
-        myOutput.innerHTML="Tempo scaduto!";
+        myOutput.innerHTML="Tempo scaduto! Prova più veloce!";
     }
     else if (sequence.length < userSeq.length) {
-    myOutput.innerHTML="Mi spiace, hai premuto troppo";    
+    myOutput.innerHTML="Mi spiace, hai premuto troppo e non so che dirti!";    
     }
     else {
         for (let i = 0; i < sequence.length; i++) {
@@ -136,8 +137,23 @@ function gameCheck() {
         if (guessed.length == sequence.length) {
             myOutput.innerHTML="Grande! Hai indovinato tutti i numeri!";
         }
+        else if (guessed.length == 0) {
+            myOutput.innerHTML="Nessuno. Mmmhhh... mi sa che stai giocando a un altro gioco!";
+        }
+
+        else if (guessed.length == 1) {
+            myOutput.innerHTML=`Solo un numero :( ...
+            Riprova dai! Non è così difficile!`;
+        }
+        
+        else if (guessed.length == 4) {
+            myOutput.innerHTML=`Uuuh! Hai azzeccato: ${guessed}!
+            Quasi!`;
+        }
+        
         else {
-            myOutput.innerHTML=`Quasi, hai indovinato i numeri ${guessed}`;
+            myOutput.innerHTML=`Solo questi ${guessed.length} giusti: ${guessed}!
+            Prova ancora!`;
         }
     }
     console.log("indovinati",guessed)
