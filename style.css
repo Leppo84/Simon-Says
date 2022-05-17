@@ -41,7 +41,7 @@ header {
     display: flex;
     width: 74vh;
     min-height: 60vh;
-    margin: 5vh auto auto;
+    margin: 3vh auto auto;
     flex-wrap: wrap;
     align-content: center;
 }
