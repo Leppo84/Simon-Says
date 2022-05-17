@@ -5,32 +5,45 @@ Descrizione:
 
 var myOutput = document.getElementById("output");
 
-
+let startBtn = document.getElementById("start_btn")
 
 let sequence = [];
 
-// genero un ciclo per ottenere 5 numeri randomici
+// creo l'evento sul bottone per iniziare il gioco
 
-addEventListener
-
-question (5);
-
-// while (sequence.length < 5) {
-//     let ranNum = Math.floor(Math.random()*5)+1;
-//     sequence.push(ranNum);
+startBtn.addEventListener("click", function() {
     
-// }
+    // faccio apparire la sequenza da memorizzare
+    
+    question (5);
 
+    // dopo 5 secondi la faccio sparire
+    
+    setTimeout(erase,5000);
+
+    // dopo 20 sec faccio comparire i pulsanti
+
+    // una volta digitato 5 volte li faccio scomparire e genero il nuovo output
+
+})
+
+// question (5);
+    
 // Le mie funzioni
 
-function question (numGen) {
+// genero un ciclo per ottenere 5 numeri randomici
 
-    
-    while (sequence.length < numGen ) {
+function question (numGen) {
+        
+        while (sequence.length < numGen ) {
         let ranNum = Math.floor(Math.random()*5)+1;
 
         sequence.push(ranNum);
     }
     myOutput.append(sequence);
     console.log("sequenza ", sequence)
+}
+
+function erase () {
+    myOutput.innerHTML="";
 }

@@ -51,9 +51,10 @@ div.yellow_btn {
     min-height: 16vh;
     padding: 2vh;
     border: 4px white groove;
+    transition: 1s;
 }
 
-#start {
+#start_btn {
     font-size: 4vh;
     font-weight: bold;
     padding: 2vh;
